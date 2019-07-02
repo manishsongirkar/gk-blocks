@@ -1,0 +1,39 @@
+{
+  "name": "gk-blocks",
+  "version": "1.0.0",
+  "description": "Blocks for GK site.",
+  "author": "",
+  "license": "GPL-2.0-or-later",
+  "keywords": [
+    "gutenberg",
+    "blocks"
+  ],
+  "devDependencies": {
+    "@wordpress/scripts": "^3.3.0",
+    "autoprefixer": "^9.4.10",
+    "classnames": "^2.2.6",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.0.0",
+    "css-mqpacker": "^7.0.0",
+    "cssnano": "^4.1.10",
+    "file-loader": "^4.0.0",
+    "mini-css-extract-plugin": "^0.7.0",
+    "moment": "^2.24.0",
+    "node-sass": "^4.12.0",
+    "postcss-assets": "^5.0.0",
+    "postcss-loader": "^3.0.0",
+    "postcss-pxtorem": "^4.0.1",
+    "postcss-scss": "^2.0.0",
+    "sass-loader": "^7.1.0",
+    "sass-mq": "^5.0.0"
+  },
+  "scripts": {
+    "build": "wp-scripts build",
+    "check-engines": "wp-scripts check-engines",
+    "check-licenses": "wp-scripts check-licenses",
+    "lint:css": "wp-scripts lint-style",
+    "lint:js": "wp-scripts lint-js",
+    "lint:pkg-json": "wp-scripts lint-pkg-json",
+    "start": "wp-scripts start"
+  }
+}
