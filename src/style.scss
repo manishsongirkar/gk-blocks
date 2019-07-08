@@ -1,0 +1,183 @@
+.row {
+	max-width: 1200px;
+	margin-right: auto;
+	margin-left: auto;
+	display: flex;
+	flex-flow: row wrap;
+}
+
+.row .row {
+	margin-right: -10px;
+	margin-left: -10px;
+}
+
+.row .row.collapse {
+	margin-right: 0;
+	margin-left: 0;
+}
+
+.row.expanded {
+	max-width: none;
+}
+
+.row.expanded .row {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.row:not(.expanded) .row {
+	max-width: none;
+}
+
+.row.collapse > .column,
+.row.collapse > .columns {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+.row.is-collapse-child,
+.row.collapse > .column > .row,
+.row.collapse > .columns > .row {
+	margin-right: 0;
+	margin-left: 0;
+}
+
+.column,
+.columns {
+	flex: 1 1 0;
+	padding-right: 10px;
+	padding-left: 10px;
+	min-width: 0;
+}
+
+@media print, screen and (min-width: 48em) {
+	.row .row {
+		margin-right: -10px;
+		margin-left: -10px;
+	}
+
+	.column,
+	.columns {
+		padding-right: 10px;
+		padding-left: 10px;
+	}
+}
+
+@media print, screen and (min-width: 64em) {
+	.row .row {
+		margin-right: -10px;
+		margin-left: -10px;
+	}
+
+	.column,
+	.columns {
+		padding-right: 10px;
+		padding-left: 10px;
+	}
+}
+
+@media screen and (min-width: 80em) {
+	.row .row {
+		margin-right: -10px;
+		margin-left: -10px;
+	}
+
+	.column,
+	.columns {
+		padding-right: 10px;
+		padding-left: 10px;
+	}
+}
+
+.wp-block-column {
+	@media screen and (max-width: 599px) {
+		margin-bottom: 30px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.news-thumbnail,
+.news-details {
+	flex: 0 0 100%;
+	max-width: 100%;
+}
+
+.news-block {
+	& > .row + .row {
+		margin-top: 30px;
+	}
+}
+
+.is-style-list-type {
+	.news-title {
+		margin-top: 0;
+	}
+
+	.news-thumbnail {
+		flex: 0 0 25%;
+		max-width: 25%;
+	}
+
+	.news-details {
+		flex: 0 0 75%;
+		max-width: 75%;
+	}
+}
+
+.is-style-featured {
+	.news-thumbnail,
+	.news-details {
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+}
+
+.is-style-thumb-type {
+	.row {
+		position: relative;
+	}
+
+	.news-thumbnail {
+		position: relative;
+		z-index: 2;
+	}
+
+	.news-title {
+		margin-bottom: 10px;
+		margin-top: 0;
+	}
+
+	.news-details {
+		bottom: 0;
+		left: 0;
+		padding: 10px 25px;
+		position: absolute;
+		width: 100%;
+		z-index: 2;
+
+		& > * {
+			z-index: 2;
+			position: relative;
+			color: #fff;
+		}
+
+		&::before {
+			background: rgba(0, 0, 0, 0.7);
+			bottom: 0;
+			content: '';
+			display: block;
+			height: 100%;
+			left: 10px;
+			position: absolute;
+			width: calc(100% - 20px);
+			z-index: 1;
+		}
+	}
+
+	.m-article-featured__excerpt {
+		display: none;
+	}
+}

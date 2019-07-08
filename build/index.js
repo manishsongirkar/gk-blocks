@@ -71,21 +71,6 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./node_modules/@babel/runtime/helpers/arrayWithHoles.js":
-/*!***************************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/arrayWithHoles.js ***!
-  \***************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-function _arrayWithHoles(arr) {
-  if (Array.isArray(arr)) return arr;
-}
-
-module.exports = _arrayWithHoles;
-
-/***/ }),
-
 /***/ "./node_modules/@babel/runtime/helpers/arrayWithoutHoles.js":
 /*!******************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/arrayWithoutHoles.js ***!
@@ -107,6 +92,61 @@ module.exports = _arrayWithoutHoles;
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime/helpers/defineProperty.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/defineProperty.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+module.exports = _defineProperty;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/extends.js":
+/*!********************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/extends.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _extends() {
+  module.exports = _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
+}
+
+module.exports = _extends;
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime/helpers/iterableToArray.js":
 /*!****************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/iterableToArray.js ***!
@@ -119,21 +159,6 @@ function _iterableToArray(iter) {
 }
 
 module.exports = _iterableToArray;
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime/helpers/nonIterableRest.js":
-/*!****************************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/nonIterableRest.js ***!
-  \****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-function _nonIterableRest() {
-  throw new TypeError("Invalid attempt to destructure non-iterable instance");
-}
-
-module.exports = _nonIterableRest;
 
 /***/ }),
 
@@ -152,24 +177,35 @@ module.exports = _nonIterableSpread;
 
 /***/ }),
 
-/***/ "./node_modules/@babel/runtime/helpers/toArray.js":
-/*!********************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/toArray.js ***!
-  \********************************************************/
+/***/ "./node_modules/@babel/runtime/helpers/objectSpread.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/objectSpread.js ***!
+  \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var arrayWithHoles = __webpack_require__(/*! ./arrayWithHoles */ "./node_modules/@babel/runtime/helpers/arrayWithHoles.js");
+var defineProperty = __webpack_require__(/*! ./defineProperty */ "./node_modules/@babel/runtime/helpers/defineProperty.js");
 
-var iterableToArray = __webpack_require__(/*! ./iterableToArray */ "./node_modules/@babel/runtime/helpers/iterableToArray.js");
+function _objectSpread(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+    var ownKeys = Object.keys(source);
 
-var nonIterableRest = __webpack_require__(/*! ./nonIterableRest */ "./node_modules/@babel/runtime/helpers/nonIterableRest.js");
+    if (typeof Object.getOwnPropertySymbols === 'function') {
+      ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {
+        return Object.getOwnPropertyDescriptor(source, sym).enumerable;
+      }));
+    }
 
-function _toArray(arr) {
-  return arrayWithHoles(arr) || iterableToArray(arr) || nonIterableRest();
+    ownKeys.forEach(function (key) {
+      defineProperty(target, key, source[key]);
+    });
+  }
+
+  return target;
 }
 
-module.exports = _toArray;
+module.exports = _objectSpread;
 
 /***/ }),
 
@@ -256,31 +292,34 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 
 /***/ }),
 
-/***/ "./src/blocks/top-news/index.js":
-/*!**************************************!*\
-  !*** ./src/blocks/top-news/index.js ***!
-  \**************************************/
+/***/ "./src/blocks/news-block/index.js":
+/*!****************************************!*\
+  !*** ./src/blocks/news-block/index.js ***!
+  \****************************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_helpers_toArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/toArray */ "./node_modules/@babel/runtime/helpers/toArray.js");
-/* harmony import */ var _babel_runtime_helpers_toArray__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_toArray__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/toConsumableArray */ "./node_modules/@babel/runtime/helpers/toConsumableArray.js");
-/* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/toConsumableArray */ "./node_modules/@babel/runtime/helpers/toConsumableArray.js");
+/* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/extends */ "./node_modules/@babel/runtime/helpers/extends.js");
+/* harmony import */ var _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/objectSpread */ "./node_modules/@babel/runtime/helpers/objectSpread.js");
+/* harmony import */ var _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_4__);
+
 
 
 
 
 /**
- * Block: Top News
+ * Block: News Block
  *
- * Custom block to show top news section.
+ * Custom block to show default news block.
  *
  * @since   0.1.0
  * @package Gk_Blocks
@@ -289,119 +328,91 @@ var __ = wp.i18n.__;
 var registerBlockType = wp.blocks.registerBlockType;
 var PostSelectButton = hm.components.PostSelectButton;
 var decodeEntities = wp.htmlEntities.decodeEntities;
-var Button = wp.components.Button;
-var _wp$editor = wp.editor,
-    RichText = _wp$editor.RichText,
-    InnerBlocks = _wp$editor.InnerBlocks;
+var InspectorControls = wp.editor.InspectorControls;
+var _wp$components = wp.components,
+    ToggleControl = _wp$components.ToggleControl,
+    PanelBody = _wp$components.PanelBody,
+    PanelRow = _wp$components.PanelRow,
+    Button = _wp$components.Button,
+    SelectControl = _wp$components.SelectControl;
 
-var ALLOWED_BLOCKS = ['core/shortcode'];
 var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 var dateObj; // Format the date in required format.
 
 var dateFormat = function dateFormat(date) {
   dateObj = new Date(date);
   return "".concat(months[dateObj.getMonth()], " ").concat(dateObj.getDate(), ", ").concat(dateObj.getFullYear());
-}; // Common article layout for backend.
+}; // Post type options
 
 
-var editArticle = function editArticle(post, index, posts, postIds, setAttributes) {
-  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
-    className: 0 === index ? "m-article m-block-link m-article-featured large-featured type-post" : "m-article m-block-link m-article-wide large-wide type-post"
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
-    className: "row"
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
-    className: 0 === index ? "m-article-featured__thumb small-12 columns position-relative" : "m-article-wide__thumb shrink columns position-relative"
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("a", {
-    href: post.link,
-    title: post.title.rendered,
-    className: "entry-thumb"
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("img", {
-    src: post.media,
-    alt: post.title.rendered
-  }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
-    className: 0 === index ? "m-article-featured__inner columns" : "m-article-wide__inner columns"
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("h2", {
-    className: 0 === index ? "m-article-featured__title entry-title" : "m-article-wide__title entry-title"
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("a", {
-    href: post.link,
-    title: post.title.rendered,
-    rel: "bookmark"
-  }, decodeEntities(post.title.rendered))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
-    className: 0 === index ? "m-article-featured__detail" : "m-article-wide__detail"
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
-    className: "byline-container"
-  }, __('By'), " ", Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("span", {
-    className: "author vcard gk-author"
-  }, post.author_name), " \u2022 ", Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("span", {
-    className: "post-date"
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("time", null, dateFormat(post.date))))), 0 === index ? Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("p", {
-    className: "hide-for-small-only m-article-featured__excerpt",
-    dangerouslySetInnerHTML: {
-      __html: post.excerpt
-    }
-  }) : '')), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(Button, {
-    onClick: function onClick() {
-      setAttributes({
-        posts: _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_1___default()(posts.filter(function (item) {
-          return item.id !== post.id;
-        }))
-      });
-      setAttributes({
-        postIds: _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_1___default()(postIds.filter(function (item) {
-          return item !== post.id;
-        }))
+var postTypeOptions = [{
+  value: 'post',
+  label: __('Post', 'atomic-blocks')
+}, {
+  value: 'page',
+  label: __('Page', 'atomic-blocks')
+}];
+
+function Inspector(props) {
+  var setAttributes = props.setAttributes,
+      _props$attributes = props.attributes,
+      showMeta = _props$attributes.showMeta,
+      showExcerpt = _props$attributes.showExcerpt,
+      postType = _props$attributes.postType;
+  var isPost = postType === 'post';
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__["createElement"])(InspectorControls, {
+    key: "inspector"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__["createElement"])(PanelBody, {
+    title: __('Post and Page Settings')
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__["createElement"])(PanelRow, null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__["createElement"])(SelectControl, {
+    label: __('Content Type', 'atomic-blocks'),
+    options: postTypeOptions,
+    value: postType,
+    onChange: function onChange(value) {
+      return setAttributes({
+        postType: value
       });
     }
-  }, __('Remove')));
-}; // Common article layout for frontend.
-
-
-var article = function article(post, index) {
-  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
-    className: 0 === index ? "m-article m-block-link m-article-featured large-featured type-post" : "m-article m-block-link m-article-wide large-wide type-post"
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
-    className: "row"
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
-    className: 0 === index ? "m-article-featured__thumb small-12 columns position-relative" : "m-article-wide__thumb shrink columns position-relative"
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("a", {
-    href: post.link,
-    title: post.title.rendered,
-    className: "entry-thumb"
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("img", {
-    src: post.media,
-    alt: post.title.rendered
-  }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
-    className: 0 === index ? "m-article-featured__inner columns" : "m-article-wide__inner columns"
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("h2", {
-    className: 0 === index ? "m-article-featured__title entry-title" : "m-article-wide__title entry-title"
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("a", {
-    href: post.link,
-    title: post.title.rendered,
-    rel: "bookmark"
-  }, post.title.rendered)), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
-    className: 0 === index ? "m-article-featured__detail" : "m-article-wide__detail"
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
-    className: "byline-container"
-  }, __('By'), " ", Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("span", {
-    className: "author vcard gk-author"
-  }, post.author_name), " \u2022 ", Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("span", {
-    className: "post-date"
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("time", null, dateFormat(post.date))))), 0 === index ? Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("p", {
-    className: "hide-for-small-only m-article-featured__excerpt",
-    dangerouslySetInnerHTML: {
-      __html: post.excerpt
+  })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__["createElement"])(PanelRow, null, isPost && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__["createElement"])(ToggleControl, {
+    label: __('Display Meta'),
+    description: __('Show the post meta or not.'),
+    checked: showMeta,
+    onChange: function onChange(value) {
+      return setAttributes({
+        showMeta: value
+      });
     }
-  }) : '')));
-};
+  })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__["createElement"])(PanelRow, null, isPost && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__["createElement"])(ToggleControl, {
+    label: __('Display Excerpt'),
+    description: __('Show the post excerpt or not.'),
+    checked: showExcerpt,
+    onChange: function onChange(value) {
+      return setAttributes({
+        showExcerpt: value
+      });
+    }
+  }))));
+}
 
-registerBlockType('gk-blocks/top-news', {
-  title: __('Top News'),
+registerBlockType('gk-blocks/news', {
+  title: __('News'),
   icon: 'admin-post',
   category: 'common',
-  keywords: [__('Top News')],
+  keywords: [__('News')],
   supports: {
     align: ['wide']
   },
+  styles: [{
+    name: 'featured',
+    label: __('Featured'),
+    isDefault: true
+  }, {
+    name: 'list-type',
+    label: __('List Type')
+  }, {
+    name: 'thumb-type',
+    label: __('Thumb Type')
+  }],
   attributes: {
     align: {
       type: 'string',
@@ -411,49 +422,41 @@ registerBlockType('gk-blocks/top-news', {
       type: 'array',
       default: []
     },
+    postType: {
+      type: 'string',
+      default: 'post'
+    },
     posts: {
       type: 'array',
       default: []
     },
-    sectionTitle: {
-      source: 'html',
-      selector: '.title'
+    showMeta: {
+      type: 'boolean',
+      default: false
+    },
+    showExcerpt: {
+      type: 'boolean',
+      default: false
     }
   },
   edit: function edit(props) {
-    var _props$attributes = props.attributes,
-        postIds = _props$attributes.postIds,
-        posts = _props$attributes.posts,
-        sectionTitle = _props$attributes.sectionTitle,
+    var _props$attributes2 = props.attributes,
+        postType = _props$attributes2.postType,
+        postIds = _props$attributes2.postIds,
+        posts = _props$attributes2.posts,
+        showMeta = _props$attributes2.showMeta,
+        showExcerpt = _props$attributes2.showExcerpt,
         setAttributes = props.setAttributes;
-
-    var _posts = _babel_runtime_helpers_toArray__WEBPACK_IMPORTED_MODULE_0___default()(posts),
-        editFirst = _posts[0],
-        editRest = _posts.slice(1);
-
-    return [Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
+    var isPost = postType === 'post';
+    return [Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__["createElement"])(Inspector, _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_1___default()({
+      key: "inspector"
+    }, _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_2___default()({
+      setAttributes: setAttributes,
+      postTypeOptions: postTypeOptions
+    }, props))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__["createElement"])("div", {
       key: "edit",
-      className: props.className
-    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("section", {
-      className: "m-listing gk-primary-listing"
-    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
-      className: "row"
-    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
-      className: "medium-9 small-12 columns top-story-title"
-    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(RichText, {
-      tagName: "h2",
-      placeholder: __('Add title…'),
-      value: sectionTitle,
-      className: "title",
-      onChange: function onChange(value) {
-        return setAttributes({
-          sectionTitle: value
-        });
-      },
-      formattingControls: []
-    })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
-      className: "medium-3 small-12 columns"
-    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(PostSelectButton, {
+      className: classnames__WEBPACK_IMPORTED_MODULE_4___default()('news-block', props.className)
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__["createElement"])(PostSelectButton, {
       value: postIds,
       onSelect: function onSelect(posts) {
         setAttributes({
@@ -465,53 +468,101 @@ registerBlockType('gk-blocks/top-news', {
           })
         });
       },
-      postType: "post",
-      maxPosts: 5,
+      postType: postType,
       btnProps: {
         isLarge: true
       }
-    }, __('Select posts'))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
-      className: "medium-5 small-12 columns medium-order-2 has-heading"
-    }, editFirst ? editArticle(editFirst, 0, posts, postIds, setAttributes) : __('No Post Selected!')), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
-      className: "medium-4 small-12 columns medium-order-1"
-    }, editRest ? editRest.map(function (post) {
-      return editArticle(post, 1, posts, postIds, setAttributes);
-    }) : __('No Post Selected!')), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
-      className: "medium-3 columns medium-order-3 text-center primary-section-placeholder has-heading"
-    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(InnerBlocks, {
-      allowedBlocks: ALLOWED_BLOCKS
-    })))))];
+    }, __('Select posts')), posts ? posts.map(function (post) {
+      return [Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__["createElement"])("div", {
+        className: "row"
+      }, post.media ? Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__["createElement"])("div", {
+        className: "small-12 columns news-thumbnail position-relative"
+      }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__["createElement"])("a", {
+        href: post.link,
+        title: post.title.rendered,
+        className: "entry-thumb"
+      }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__["createElement"])("img", {
+        src: post.media,
+        alt: post.title.rendered
+      }))) : null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__["createElement"])("div", {
+        className: "small-12 columns news-details position-relative"
+      }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__["createElement"])("h2", {
+        className: "news-title"
+      }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__["createElement"])("a", {
+        href: post.link,
+        title: post.title.rendered,
+        rel: "bookmark"
+      }, decodeEntities(post.title.rendered))), isPost && showMeta ? Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__["createElement"])("div", {
+        className: "news-meta"
+      }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__["createElement"])("div", {
+        className: "byline-container"
+      }, __('By'), " ", Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__["createElement"])("span", {
+        className: "author vcard gk-author"
+      }, post.author_name), " \u2022 ", Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__["createElement"])("span", {
+        className: "post-date"
+      }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__["createElement"])("time", null, dateFormat(post.date))))) : null, isPost && showExcerpt ? Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__["createElement"])("div", {
+        className: "m-article-featured__excerpt",
+        dangerouslySetInnerHTML: {
+          __html: post.excerpt
+        }
+      }) : null)), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__["createElement"])(Button, {
+        onClick: function onClick() {
+          setAttributes({
+            posts: _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0___default()(posts.filter(function (item) {
+              return item.id !== post.id;
+            }))
+          });
+          setAttributes({
+            postIds: _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0___default()(postIds.filter(function (item) {
+              return item !== post.id;
+            }))
+          });
+        }
+      }, __('Remove'))];
+    }) : __('No Post Selected!'))];
   },
   save: function save(props) {
-    var _props$attributes2 = props.attributes,
-        sectionTitle = _props$attributes2.sectionTitle,
-        posts = _props$attributes2.posts; // Array Destructuring.
-
-    var _posts2 = _babel_runtime_helpers_toArray__WEBPACK_IMPORTED_MODULE_0___default()(posts),
-        first = _posts2[0],
-        rest = _posts2.slice(1);
-
-    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
-      className: props.className
-    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("section", {
-      className: "m-listing gk-primary-listing"
-    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
-      className: "row"
-    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
-      className: "medium-9 small-12 columns top-story-title"
-    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(RichText.Content, {
-      tagName: "h4",
-      className: classnames__WEBPACK_IMPORTED_MODULE_3___default()('title'),
-      value: sectionTitle
-    })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
-      className: "medium-5 small-12 columns medium-order-2 has-heading"
-    }, article(first, 0)), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
-      className: "medium-4 small-12 columns medium-order-1"
-    }, rest.map(function (post) {
-      return article(post, 1);
-    })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
-      className: "medium-3 columns medium-order-3 text-center primary-section-placeholder has-heading"
-    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(InnerBlocks.Content, null)))));
+    var _props$attributes3 = props.attributes,
+        posts = _props$attributes3.posts,
+        showMeta = _props$attributes3.showMeta,
+        showExcerpt = _props$attributes3.showExcerpt;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__["createElement"])("div", {
+      className: classnames__WEBPACK_IMPORTED_MODULE_4___default()('news-block', props.className)
+    }, posts.map(function (post) {
+      return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__["createElement"])("div", {
+        className: "row"
+      }, post.media ? Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__["createElement"])("div", {
+        className: "small-12 columns news-thumbnail position-relative"
+      }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__["createElement"])("a", {
+        href: post.link,
+        title: post.title.rendered,
+        className: "entry-thumb"
+      }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__["createElement"])("img", {
+        src: post.media,
+        alt: post.title.rendered
+      }))) : null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__["createElement"])("div", {
+        className: "small-12 columns news-details position-relative"
+      }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__["createElement"])("h2", {
+        className: "news-title"
+      }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__["createElement"])("a", {
+        href: post.link,
+        title: post.title.rendered,
+        rel: "bookmark"
+      }, decodeEntities(post.title.rendered))), showMeta ? Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__["createElement"])("div", {
+        className: "news-meta"
+      }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__["createElement"])("div", {
+        className: "byline-container"
+      }, __('By'), " ", Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__["createElement"])("span", {
+        className: "author vcard gk-author"
+      }, post.author_name), " \u2022 ", Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__["createElement"])("span", {
+        className: "post-date"
+      }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__["createElement"])("time", null, dateFormat(post.date))))) : null, showExcerpt ? Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__["createElement"])("p", {
+        className: "hide-for-small-only m-article-featured__excerpt",
+        dangerouslySetInnerHTML: {
+          __html: post.excerpt
+        }
+      }) : null));
+    }));
   }
 });
 
@@ -526,7 +577,7 @@ registerBlockType('gk-blocks/top-news', {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _blocks_top_news_index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./blocks/top-news/index */ "./src/blocks/top-news/index.js");
+/* harmony import */ var _blocks_news_block_index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./blocks/news-block/index */ "./src/blocks/news-block/index.js");
 /**
  * Gutenberg Blocks
  *
@@ -541,7 +592,8 @@ __webpack_require__.r(__webpack_exports__);
  * @package Gk_Blocks
  */
 // Import all blocks.
-
+ //import './blocks/top-news/index';
+//import './blocks/editor-latest-news/index';
 
 /***/ }),
 

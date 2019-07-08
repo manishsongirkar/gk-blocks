@@ -168,56 +168,54 @@ registerBlockType(
 			const [ editFirst, ...editRest] = posts;
 
 			return [
-				<div key="edit" className={ props.className }>
-					<section className="m-listing gk-primary-listing">
-						<div className="row">
-							<div className="medium-9 small-12 columns top-story-title">
-								<RichText
-									tagName="h2"
-									placeholder={ __( 'Add title…' ) }
-									value={ sectionTitle }
-									className="title"
-									onChange={ ( value ) => setAttributes( { sectionTitle: value } ) }
-									formattingControls={ [] }
-								/>
-							</div>
-
-							<div className="medium-3 small-12 columns">
-								<PostSelectButton
-									value    = { postIds }
-									onSelect = { posts => {
-										setAttributes( { posts } );
-										setAttributes( { postIds: posts.map( p => p.id ) } )
-									} }
-									postType = "post"
-									maxPosts = {5}
-									btnProps = { { isLarge: true } }
-								>
-									{ __( 'Select posts' ) }
-								</PostSelectButton>
-							</div>
-
-							<div className="medium-5 small-12 columns medium-order-2 has-heading">
-								{
-									editFirst ? editArticle( editFirst, 0, posts, postIds, setAttributes ) : __( 'No Post Selected!' )
-								}
-							</div>
-
-							<div className="medium-4 small-12 columns medium-order-1">
-								{
-									editRest ? editRest.map( ( post ) => {
-										return (
-											editArticle( post, 1, posts, postIds, setAttributes )
-										);
-									} ) : __( 'No Post Selected!' )
-								}
-							</div>
-							<div className="medium-3 columns medium-order-3 text-center primary-section-placeholder has-heading">
-								<InnerBlocks allowedBlocks={ ALLOWED_BLOCKS } />
-							</div>
+				<section key="edit" className={ classnames( 'm-listing', 'gk-primary-listing', props.className ) }>
+					<div className="row">
+						<div className="medium-9 small-12 columns top-story-title">
+							<RichText
+								tagName="h2"
+								placeholder={ __( 'Add title…' ) }
+								value={ sectionTitle }
+								className="title"
+								onChange={ ( value ) => setAttributes( { sectionTitle: value } ) }
+								formattingControls={ [] }
+							/>
 						</div>
-					</section>
-				</div>
+
+						<div className="medium-3 small-12 columns">
+							<PostSelectButton
+								value    = { postIds }
+								onSelect = { posts => {
+									setAttributes( { posts } );
+									setAttributes( { postIds: posts.map( p => p.id ) } )
+								} }
+								postType = "post"
+								maxPosts = {5}
+								btnProps = { { isLarge: true } }
+							>
+								{ __( 'Select posts' ) }
+							</PostSelectButton>
+						</div>
+
+						<div className="medium-5 small-12 columns medium-order-2 has-heading">
+							{
+								editFirst ? editArticle( editFirst, 0, posts, postIds, setAttributes ) : __( 'No Post Selected!' )
+							}
+						</div>
+
+						<div className="medium-4 small-12 columns medium-order-1">
+							{
+								editRest ? editRest.map( ( post ) => {
+									return (
+										editArticle( post, 1, posts, postIds, setAttributes )
+									);
+								} ) : __( 'No Post Selected!' )
+							}
+						</div>
+						<div className="medium-3 columns medium-order-3 text-center primary-section-placeholder has-heading">
+							<InnerBlocks allowedBlocks={ ALLOWED_BLOCKS } />
+						</div>
+					</div>
+				</section>
 			];
 		},
 
@@ -228,39 +226,37 @@ registerBlockType(
 			const [ first, ...rest] = posts;
 
 			return (
-				<div className={ props.className }>
-					<section className="m-listing gk-primary-listing">
-						<div className="row">
-							<div className="medium-9 small-12 columns top-story-title">
-								<RichText.Content
-									tagName="h4"
-									className={ classnames(
-										'title',
-									) }
-									value={ sectionTitle }
-								/>
-							</div>
-
-							<div className="medium-5 small-12 columns medium-order-2 has-heading">
-								{
-									article( first, 0 )
-								}
-							</div>
-							<div className="medium-4 small-12 columns medium-order-1">
-								{
-									rest.map( ( post ) => {
-										return (
-											article( post, 1 )
-										);
-									} )
-								}
-							</div>
-							<div className="medium-3 columns medium-order-3 text-center primary-section-placeholder has-heading">
-								<InnerBlocks.Content />
-							</div>
+				<section className={ classnames( 'm-listing', 'gk-primary-listing', props.className ) }>
+					<div className="row">
+						<div className="medium-9 small-12 columns top-story-title">
+							<RichText.Content
+								tagName="h4"
+								className={ classnames(
+									'title',
+								) }
+								value={ sectionTitle }
+							/>
 						</div>
-					</section>
-				</div>
+
+						<div className="medium-5 small-12 columns medium-order-2 has-heading">
+							{
+								article( first, 0 )
+							}
+						</div>
+						<div className="medium-4 small-12 columns medium-order-1">
+							{
+								rest.map( ( post ) => {
+									return (
+										article( post, 1 )
+									);
+								} )
+							}
+						</div>
+						<div className="medium-3 columns medium-order-3 text-center primary-section-placeholder has-heading">
+							<InnerBlocks.Content />
+						</div>
+					</div>
+				</section>
 			);
 		},
 	}

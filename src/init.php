@@ -35,7 +35,9 @@ function gk_blocks_top_news() {
 
 add_action( 'init', 'gk_blocks_top_news' );
 
-require_once plugin_dir_path( __FILE__ ) . 'blocks/top-news/block-render.php';
+require_once plugin_dir_path( __FILE__ ) . 'blocks/news-block/block-render.php';
+//require_once plugin_dir_path( __FILE__ ) . 'blocks/top-news/block-render.php';
+//require_once plugin_dir_path( __FILE__ ) . 'blocks/editor-latest-news/block-render.php';
 
 /**
  * Enqueue block scripts and styles in both the admin editor and frontend.

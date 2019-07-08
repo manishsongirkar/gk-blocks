@@ -13,4 +13,7 @@
  */
 
 // Import all blocks.
-import './blocks/top-news/index';
+import './blocks/news-block/index';
+
+//import './blocks/top-news/index';
+//import './blocks/editor-latest-news/index';

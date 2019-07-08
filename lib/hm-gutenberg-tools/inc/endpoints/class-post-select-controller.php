@@ -145,7 +145,7 @@ class Post_Select_Controller extends WP_REST_Controller {
 
 		$short_title = get_post_meta( $post->ID, 'rbmh_online_title_stv', true );
 
-		$featured_media = 0;
+		$featured_media = null;
 
 		if ( has_post_thumbnail( $post->ID ) ) {
 
