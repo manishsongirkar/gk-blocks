@@ -10,6 +10,7 @@ const path                   = require( 'path' );
 const { CleanWebpackPlugin } = require( 'clean-webpack-plugin' );
 const cssnano                = require( 'cssnano' );
 const MiniCssExtractPlugin   = require( 'mini-css-extract-plugin' );
+const IMG_DIR                = path.resolve( __dirname, 'img' );
 const FONTS_DIR              = path.resolve( __dirname, 'fonts' );
 
 module.exports = {
@@ -57,7 +58,18 @@ module.exports = {
 						publicPath: '../'
 					}
 				}
-		}
+		},
+			{
+				test: /\.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+				exclude: [ IMG_DIR, /node_modules/ ],
+				use: {
+					loader: 'file-loader',
+					options: {
+						name: '[path][name].[ext]',
+						publicPath: '../'
+					}
+				}
+			}
 		]
 	}
 };
