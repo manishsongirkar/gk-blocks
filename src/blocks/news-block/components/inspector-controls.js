@@ -19,8 +19,8 @@ function Inspector( { ...props } ) {
 
 	// Post type options.
 	const postTypeOptions = [
-		{ value: 'post', label: __( 'Post', 'atomic-blocks' ) },
-		{ value: 'page', label: __( 'Page', 'atomic-blocks' ) },
+		{ value: 'post', label: __( 'Post' ) },
+		{ value: 'page', label: __( 'Page' ) },
 	];
 
 	return (
@@ -28,7 +28,7 @@ function Inspector( { ...props } ) {
 			<PanelBody title={ __( 'Post and Page Settings' ) }>
 				<PanelRow>
 					<SelectControl
-						label={ __( 'Content Type', 'atomic-blocks' ) }
+						label={ __( 'Content Type' ) }
 						options={ postTypeOptions }
 						value={ postType }
 						onChange={ ( value ) => setAttributes( { postType: value } ) }
@@ -101,7 +101,7 @@ function Inspector( { ...props } ) {
 					'bullet-list' !== layout && showReadMore &&
 					<PanelRow>
 						<TextControl
-							label={ __( 'Customize Read More Text', 'atomic-blocks' ) }
+							label={ __( 'Customize Read More Text' ) }
 							type="text"
 							value={ readMoreText }
 							onChange={( value ) => setAttributes( { readMoreText : value } )}

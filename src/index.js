@@ -13,8 +13,8 @@
  */
 
 // Import all blocks.
-//import './blocks/slider-block/index';
+import './blocks/section-block/index';
 import './blocks/news-block/index';
+import './blocks/top-news/index';
 
-//import './blocks/top-news/index';
 //import './blocks/editor-latest-news/index';

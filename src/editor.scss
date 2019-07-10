@@ -10,3 +10,15 @@
 	margin-bottom: 15px;
 	margin-left: 10px;
 }
+
+.view-more-wrap {
+	& > div {
+		display: inline-block;
+		vertical-align: top;
+	}
+
+	form {
+		position: absolute;
+		right: 0;
+	}
+}

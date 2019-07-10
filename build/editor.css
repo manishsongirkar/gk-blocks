@@ -8,5 +8,13 @@
   margin-bottom: 0.9375rem;
   margin-left: 0.625rem; }
 
+.view-more-wrap > div {
+  display: inline-block;
+  vertical-align: top; }
+
+.view-more-wrap form {
+  position: absolute;
+  right: 0; }
+
 
 /*# sourceMappingURL=editor.css.map*/
