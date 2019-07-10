@@ -1,7 +1,7 @@
 GK Blocks
 ============
 
-Custom Gutenberg blocks for GK site.
+Custom Gutenberg blocks for GK site. These are experimental blocks, so do not use it on production site.
 
 This project was bootstrapped with [@wordpress/scripts](https://github.com/WordPress/gutenberg/blob/master/packages/scripts/README.md).
 
@@ -30,6 +30,8 @@ Below you will find some information on how to run scripts.
 Activate the `GK Blocks` plugin, than go to your Block Editor (Gutenberg), than add Block and Select block from below list,
 
 1. Top News
+2. News Block
+3. Section Block
 
 ## Contributor
 * **[Manish Songirkar](https://github.com/manishsongirkar)**
