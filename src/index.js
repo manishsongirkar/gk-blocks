@@ -16,5 +16,6 @@
 import './blocks/section-block/index';
 import './blocks/news-block/index';
 import './blocks/top-news/index';
+import './blocks/latest-posts/index';
 
 //import './blocks/editor-latest-news/index';

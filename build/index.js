@@ -522,6 +522,101 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 
 /***/ }),
 
+/***/ "./src/blocks/latest-posts/index.js":
+/*!******************************************!*\
+  !*** ./src/blocks/latest-posts/index.js ***!
+  \******************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_1__);
+
+
+/**
+ * Block: Latest Posts Block
+ *
+ * Custom block to show default latest news block.
+ *
+ * @since   0.1.0
+ * @package Gk_Blocks
+ */
+var __ = wp.i18n.__;
+var registerBlockType = wp.blocks.registerBlockType;
+var withSelect = wp.data.withSelect;
+
+var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+var dateObj; // Format the date in required format.
+
+var dateFormat = function dateFormat(date) {
+  dateObj = new Date(date);
+  return "".concat(months[dateObj.getMonth()], " ").concat(dateObj.getDate(), ", ").concat(dateObj.getFullYear());
+};
+
+registerBlockType('gk-blocks/latest-posts', {
+  title: __('Latest Posts'),
+  icon: 'megaphone',
+  category: 'common',
+  keywords: [__('Latest Posts')],
+  edit: withSelect(function (select, props) {
+    var postsToShow = props.attributes.postsToShow;
+
+    var _select = select('core'),
+        getEntityRecords = _select.getEntityRecords;
+
+    return {
+      posts: getEntityRecords('postType', 'post', {
+        per_page: postsToShow
+      })
+    };
+  })(function (_ref) {
+    var posts = _ref.posts,
+        className = _ref.className;
+
+    if (!posts) {
+      return __('Loading...');
+    }
+
+    if (posts && 0 === posts.length) {
+      return __('No Posts Found!!!');
+    }
+
+    return [Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: classnames__WEBPACK_IMPORTED_MODULE_1___default()('gk-latest-posts', className)
+    }, posts ? posts.map(function (post) {
+      return [Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+        className: "row"
+      }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+        className: "small-12 medium-4 column"
+      }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("a", {
+        href: post.link,
+        title: post.title.row
+      }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("img", {
+        src: post.featured_image_src,
+        alt: post.title.row
+      }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+        className: "small-12 medium-8 column"
+      }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("h2", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("a", {
+        href: post.link,
+        title: post.title.row
+      }, post.title.rendered)), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+        className: "meta"
+      }, "By ", Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("a", {
+        href: post.author_info.author_link
+      }, post.author_info.display_name), " on ", dateFormat(post.date))))];
+    }) : __('No Post found!'))];
+  }),
+  save: function save() {
+    return null;
+  }
+});
+
+/***/ }),
+
 /***/ "./src/blocks/news-block/components/bullet-list.js":
 /*!*********************************************************!*\
   !*** ./src/blocks/news-block/components/bullet-list.js ***!
@@ -1543,6 +1638,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _blocks_section_block_index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./blocks/section-block/index */ "./src/blocks/section-block/index.js");
 /* harmony import */ var _blocks_news_block_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./blocks/news-block/index */ "./src/blocks/news-block/index.js");
 /* harmony import */ var _blocks_top_news_index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./blocks/top-news/index */ "./src/blocks/top-news/index.js");
+/* harmony import */ var _blocks_latest_posts_index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./blocks/latest-posts/index */ "./src/blocks/latest-posts/index.js");
 /**
  * Gutenberg Blocks
  *
@@ -1557,6 +1653,7 @@ __webpack_require__.r(__webpack_exports__);
  * @package Gk_Blocks
  */
 // Import all blocks.
+
 
 
  //import './blocks/editor-latest-news/index';
