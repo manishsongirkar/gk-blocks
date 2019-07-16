@@ -2,7 +2,7 @@
  * Custom WebPack config.
  *
  * @type {{mode, output, entry, resolve, stats, plugins, module}}
- * @package Gk_Blocks
+ * @package News_Blocks
  */
 
 const defaultConfig          = require( './node_modules/@wordpress/scripts/config/webpack.config' );

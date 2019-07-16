@@ -4,7 +4,7 @@
  * Custom block to show default news block.
  *
  * @since   0.1.0
- * @package Gk_Blocks
+ * @package News_Blocks
  */
 
 const { __ }                = wp.i18n;
@@ -66,7 +66,7 @@ const allAttributes = {
 };
 
 registerBlockType(
-	'gk-blocks/news',
+	'news-blocks/news',
 	{
 		title:    __( 'News' ),
 		icon:     'admin-post',

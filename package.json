@@ -1,7 +1,7 @@
 {
-  "name": "gk-blocks",
+  "name": "news-blocks",
   "version": "1.0.0",
-  "description": "Blocks for GK site.",
+  "description": "Blocks for news site.",
   "author": "",
   "license": "GPL-2.0-or-later",
   "keywords": [

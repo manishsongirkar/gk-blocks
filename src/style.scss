@@ -547,8 +547,8 @@
 	}
 }
 
-.wp-block-gk-blocks-news {
-	& + .wp-block-gk-blocks-news {
+.wp-block-news-blocks-news {
+	& + .wp-block-news-blocks-news {
 		margin-top: 30px;
 	}
 }
@@ -634,7 +634,7 @@
 
 .block-slider {
 	.blocks-section-inner {
-		.wp-block-gk-blocks-news + .wp-block-gk-blocks-news {
+		.wp-block-news-blocks-news + .wp-block-news-blocks-news {
 			margin: 0;
 		}
 

@@ -4,7 +4,7 @@
  * Custom block to show top news section.
  *
  * @since   0.1.0
- * @package Gk_Blocks
+ * @package News_Blocks
  */
 
 const { __ }                = wp.i18n;
@@ -67,7 +67,7 @@ const editArticle = ( post, index, posts, postIds, setAttributes ) => (
 
 				<div className={ 0 === index ? `m-article-featured__detail` : `m-article-wide__detail` }>
 					<div className="byline-container">
-						{ __( 'By' ) } <span className="author vcard gk-author">{ post.author_name }</span> • <span className="post-date"><time>{ dateFormat( post.date ) }</time></span>
+						{ __( 'By' ) } <span className="author vcard news-author">{ post.author_name }</span> • <span className="post-date"><time>{ dateFormat( post.date ) }</time></span>
 					</div>
 				</div>
 
@@ -109,7 +109,7 @@ const article = ( post, index ) => (
 
 				<div className={ 0 === index ? `m-article-featured__detail` : `m-article-wide__detail` }>
 					<div className="byline-container">
-						{ __( 'By' ) } <span className="author vcard gk-author">{post.author_name}</span> • <span className="post-date"><time>{ dateFormat( post.date ) }</time></span>
+						{ __( 'By' ) } <span className="author vcard news-author">{post.author_name}</span> • <span className="post-date"><time>{ dateFormat( post.date ) }</time></span>
 					</div>
 				</div>
 
@@ -122,7 +122,7 @@ const article = ( post, index ) => (
 );
 
 registerBlockType(
-	'gk-blocks/top-news',
+	'news-blocks/top-news',
 	{
 		title: __( 'Top News' ),
 		icon: 'admin-post',
@@ -168,7 +168,7 @@ registerBlockType(
 			const [ editFirst, ...editRest] = posts;
 
 			return [
-				<section key="edit" className={ classnames( 'm-listing', 'gk-primary-listing', props.className ) }>
+				<section key="edit" className={ classnames( 'm-listing', 'news-primary-listing', props.className ) }>
 					<div className="row">
 						<div className="medium-9 small-12 columns top-story-title">
 							<RichText
@@ -226,7 +226,7 @@ registerBlockType(
 			const [ first, ...rest] = posts;
 
 			return (
-				<section className={ classnames( 'm-listing', 'gk-primary-listing', props.className ) }>
+				<section className={ classnames( 'm-listing', 'news-primary-listing', props.className ) }>
 					<div className="row">
 						<div className="medium-9 small-12 columns top-story-title">
 							<RichText.Content

@@ -1,7 +1,7 @@
-GK Blocks
+News Blocks
 ============
 
-Custom Gutenberg blocks for GK site. These are experimental blocks, so do not use it on production site.
+Custom Gutenberg blocks for news site. These are experimental blocks, so do not use it on production site.
 
 This project was bootstrapped with [@wordpress/scripts](https://github.com/WordPress/gutenberg/blob/master/packages/scripts/README.md).
 
@@ -12,7 +12,7 @@ These instructions will get you a copy of the project up and running on your loc
 ### Installing :wrench:
 
 1. Clone this repo in your `plugins` folder in your WordPress site.
-2. `cd gk-blocks/`
+2. `cd news-blocks/`
 3. `npm install`
 
 Below you will find some information on how to run scripts.
@@ -27,11 +27,12 @@ Below you will find some information on how to run scripts.
 
 ## How to use:
 
-Activate the `GK Blocks` plugin, than go to your Block Editor (Gutenberg), than add Block and Select block from below list,
+Activate the `News Blocks` plugin, than go to your Block Editor (Gutenberg), than add Block and Select block from below list,
 
 1. Top News
 2. News Block
 3. Section Block
+4. Latest Posts
 
 ## Contributor
 * **[Manish Songirkar](https://github.com/manishsongirkar)**

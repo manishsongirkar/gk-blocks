@@ -4,7 +4,7 @@
  * Custom block to show Latest news and Editors picks section.
  *
  * @since   0.1.0
- * @package Gk_Blocks
+ * @package News_Blocks
  */
 
 const { __ }               = wp.i18n;
@@ -64,7 +64,7 @@ const editLatestArticle = ( post, index, latestPosts, latestPostIds, setAttribut
 
 				<div className="m-article-wide__detail show-for-small-only">
 					<div className="byline-container">
-						{ __( 'By' ) } <span className="author vcard gk-author">{post.author_name}</span> • <span className="post-date"><time>{ dateFormat( post.date ) }</time></span>
+						{ __( 'By' ) } <span className="author vcard news-author">{post.author_name}</span> • <span className="post-date"><time>{ dateFormat( post.date ) }</time></span>
 					</div>
 				</div>
 			</div>
@@ -101,7 +101,7 @@ const latestArticle = ( post, index ) => (
 
 				<div className="m-article-wide__detail show-for-small-only">
 					<div className="byline-container">
-						{ __( 'By' ) } <span className="author vcard gk-author">{post.author_name}</span> • <span className="post-date"><time>{ dateFormat( post.date ) }</time></span>
+						{ __( 'By' ) } <span className="author vcard news-author">{post.author_name}</span> • <span className="post-date"><time>{ dateFormat( post.date ) }</time></span>
 					</div>
 				</div>
 			</div>
@@ -129,7 +129,7 @@ const editEditorFirstPost = ( post, index, editorPosts, editorPostIds, setAttrib
 
 				<div className="m-article-featured__detail">
 					<div className="byline-container">
-						{ __( 'By' ) } <span className="author vcard gk-author">{post.author_name}</span> • <span className="post-date"><time>{ dateFormat( post.date ) }</time></span>
+						{ __( 'By' ) } <span className="author vcard news-author">{post.author_name}</span> • <span className="post-date"><time>{ dateFormat( post.date ) }</time></span>
 					</div>
 				</div>
 
@@ -173,7 +173,7 @@ const editorFirstPost = ( post, index, editorPosts, editorPostIds, setAttributes
 
 				<div className="m-article-featured__detail">
 					<div className="byline-container">
-						{ __( 'By' ) } <span className="author vcard gk-author">{post.author_name}</span> • <span className="post-date"><time>{ dateFormat( post.date ) }</time></span>
+						{ __( 'By' ) } <span className="author vcard news-author">{post.author_name}</span> • <span className="post-date"><time>{ dateFormat( post.date ) }</time></span>
 					</div>
 				</div>
 
@@ -238,13 +238,13 @@ const editorMiddlePost = ( post, index ) => (
 	</div>
 );
 
-registerBlockStyle( 'gk-blocks/editor-latest-news', {
+registerBlockStyle( 'news-blocks/editor-latest-news', {
 	name: 'blue-paragraph',
 	label: 'Blue Paragraph'
 } );
 
 registerBlockType(
-	'gk-blocks/editor-latest-news',
+	'news-blocks/editor-latest-news',
 	{
 		title: __( 'Editor & Latest News' ),
 		icon: 'admin-post',

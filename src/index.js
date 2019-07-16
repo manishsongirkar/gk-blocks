@@ -9,7 +9,7 @@
  * Webpack is compiling as the input file.
  *
  * @since   0.1.0
- * @package Gk_Blocks
+ * @package News_Blocks
  */
 
 // Import all blocks.

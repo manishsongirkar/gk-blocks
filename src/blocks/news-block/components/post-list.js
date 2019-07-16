@@ -71,7 +71,7 @@ function PostList( { post, isEdit, props } ) {
 					{
 						isPost && showMeta ? <div className="news-meta">
 							<div className="byline-container">
-								{ __( 'By' ) } <span className="author vcard gk-author">{ post.author_name }</span> • <span className="post-date"><time>{ dateFormat( post.date ) }</time></span>
+								{ __( 'By' ) } <span className="author vcard news-author">{ post.author_name }</span> • <span className="post-date"><time>{ dateFormat( post.date ) }</time></span>
 							</div>
 						</div> : null
 					}

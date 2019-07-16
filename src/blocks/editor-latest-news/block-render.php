@@ -3,7 +3,7 @@
  * Editor's picks and Latest news block render
  *
  * @since   0.1.0
- * @package Gk_Blocks
+ * @package News_Blocks
  */
 
 /**
@@ -11,9 +11,9 @@
  */
 function top_editor_latest_news() {
 	register_block_type(
-		'gk-blocks/editor-latest-news',
+		'news-blocks/editor-latest-news',
 		[
-			'editor_script' => 'gk-blocks',
+			'editor_script' => 'news-blocks',
 		]
 	);
 }

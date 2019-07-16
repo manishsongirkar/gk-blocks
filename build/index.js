@@ -543,7 +543,7 @@ __webpack_require__.r(__webpack_exports__);
  * Custom block to show default latest news block.
  *
  * @since   0.1.0
- * @package Gk_Blocks
+ * @package News_Blocks
  */
 var __ = wp.i18n.__;
 var registerBlockType = wp.blocks.registerBlockType;
@@ -557,7 +557,7 @@ var dateFormat = function dateFormat(date) {
   return "".concat(months[dateObj.getMonth()], " ").concat(dateObj.getDate(), ", ").concat(dateObj.getFullYear());
 };
 
-registerBlockType('gk-blocks/latest-posts', {
+registerBlockType('news-blocks/latest-posts', {
   title: __('Latest Posts'),
   icon: 'megaphone',
   category: 'common',
@@ -586,7 +586,7 @@ registerBlockType('gk-blocks/latest-posts', {
     }
 
     return [Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
-      className: classnames__WEBPACK_IMPORTED_MODULE_1___default()('gk-latest-posts', className)
+      className: classnames__WEBPACK_IMPORTED_MODULE_1___default()('news-latest-posts', className)
     }, posts ? posts.map(function (post) {
       return [Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
         className: "row"
@@ -879,7 +879,7 @@ function PostList(_ref) {
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
     className: "byline-container"
   }, __('By'), " ", Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("span", {
-    className: "author vcard gk-author"
+    className: "author vcard news-author"
   }, post.author_name), " \u2022 ", Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("span", {
     className: "post-date"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("time", null, dateFormat(post.date))))) : null, isPost && showExcerpt ? Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
@@ -1049,7 +1049,7 @@ __webpack_require__.r(__webpack_exports__);
  * Custom block to show default news block.
  *
  * @since   0.1.0
- * @package Gk_Blocks
+ * @package News_Blocks
  */
 var __ = wp.i18n.__;
 var registerBlockType = wp.blocks.registerBlockType;
@@ -1097,7 +1097,7 @@ var allAttributes = {
     default: __('Read More')
   }
 };
-registerBlockType('gk-blocks/news', {
+registerBlockType('news-blocks/news', {
   title: __('News'),
   icon: 'admin-post',
   category: 'common',
@@ -1218,7 +1218,7 @@ __webpack_require__.r(__webpack_exports__);
  * Custom block for Section wrapper.
  *
  * @since   0.1.0
- * @package Gk_Blocks
+ * @package News_Blocks
  */
 
 var __ = wp.i18n.__;
@@ -1232,8 +1232,8 @@ var _wp$components = wp.components,
     PanelBody = _wp$components.PanelBody,
     PanelRow = _wp$components.PanelRow,
     SelectControl = _wp$components.SelectControl;
-var ALLOWED_BLOCKS = ['gk-blocks/news'];
-registerBlockType('gk-blocks/section', {
+var ALLOWED_BLOCKS = ['news-blocks/news'];
+registerBlockType('news-blocks/section', {
   title: __('Section'),
   icon: 'editor-table',
   category: 'common',
@@ -1396,7 +1396,7 @@ __webpack_require__.r(__webpack_exports__);
  * Custom block to show top news section.
  *
  * @since   0.1.0
- * @package Gk_Blocks
+ * @package News_Blocks
  */
 var __ = wp.i18n.__;
 var registerBlockType = wp.blocks.registerBlockType;
@@ -1444,7 +1444,7 @@ var editArticle = function editArticle(post, index, posts, postIds, setAttribute
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
     className: "byline-container"
   }, __('By'), " ", Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("span", {
-    className: "author vcard gk-author"
+    className: "author vcard news-author"
   }, post.author_name), " \u2022 ", Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("span", {
     className: "post-date"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("time", null, dateFormat(post.date))))), 0 === index ? Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("p", {
@@ -1496,7 +1496,7 @@ var article = function article(post, index) {
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
     className: "byline-container"
   }, __('By'), " ", Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("span", {
-    className: "author vcard gk-author"
+    className: "author vcard news-author"
   }, post.author_name), " \u2022 ", Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("span", {
     className: "post-date"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("time", null, dateFormat(post.date))))), 0 === index ? Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("p", {
@@ -1507,7 +1507,7 @@ var article = function article(post, index) {
   }) : '')));
 };
 
-registerBlockType('gk-blocks/top-news', {
+registerBlockType('news-blocks/top-news', {
   title: __('Top News'),
   icon: 'admin-post',
   category: 'common',
@@ -1546,7 +1546,7 @@ registerBlockType('gk-blocks/top-news', {
 
     return [Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("section", {
       key: "edit",
-      className: classnames__WEBPACK_IMPORTED_MODULE_3___default()('m-listing', 'gk-primary-listing', props.className)
+      className: classnames__WEBPACK_IMPORTED_MODULE_3___default()('m-listing', 'news-primary-listing', props.className)
     }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
       className: "row"
     }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
@@ -1603,7 +1603,7 @@ registerBlockType('gk-blocks/top-news', {
         rest = _posts2.slice(1);
 
     return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("section", {
-      className: classnames__WEBPACK_IMPORTED_MODULE_3___default()('m-listing', 'gk-primary-listing', props.className)
+      className: classnames__WEBPACK_IMPORTED_MODULE_3___default()('m-listing', 'news-primary-listing', props.className)
     }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
       className: "row"
     }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
@@ -1650,7 +1650,7 @@ __webpack_require__.r(__webpack_exports__);
  * Webpack is compiling as the input file.
  *
  * @since   0.1.0
- * @package Gk_Blocks
+ * @package News_Blocks
  */
 // Import all blocks.
 

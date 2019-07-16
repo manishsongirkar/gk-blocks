@@ -3,15 +3,15 @@
  * Latest posts block render
  *
  * @since   0.1.0
- * @package Gk_Blocks
+ * @package News_Blocks
  */
 
 /**
  * Register block type
  */
-function gk_latest_posts_block() {
+function news_latest_posts_block() {
 	register_block_type(
-		'gk-blocks/latest-posts',
+		'news-blocks/latest-posts',
 		[
 			'attributes'      => array(
 				'postsToShow' => array(
@@ -19,13 +19,13 @@ function gk_latest_posts_block() {
 					'default' => 5,
 				),
 			),
-			'editor_script'   => 'gk-blocks',
-			'render_callback' => 'gk_blocks_latest_posts_callback',
+			'editor_script'   => 'news-blocks',
+			'render_callback' => 'news_blocks_latest_posts_callback',
 		]
 	);
 }
 
-add_action( 'init', 'gk_latest_posts_block' );
+add_action( 'init', 'news_latest_posts_block' );
 
 /**
  * Latest posts callback.
@@ -34,7 +34,7 @@ add_action( 'init', 'gk_latest_posts_block' );
  *
  * @return string|void
  */
-function gk_blocks_latest_posts_callback( $attributes ) {
+function news_blocks_latest_posts_callback( $attributes ) {
 	if ( is_admin() ) {
 		return;
 	}
@@ -51,7 +51,7 @@ function gk_blocks_latest_posts_callback( $attributes ) {
 	}
 
 	?>
-	<div class="gk-latest-posts">
+	<div class="news-latest-posts">
 		<?php
 		foreach ( $recent_posts as $post ) {
 			$post_id = $post['ID'];

@@ -4,7 +4,7 @@
  * Custom block for Section wrapper.
  *
  * @since   0.1.0
- * @package Gk_Blocks
+ * @package News_Blocks
  */
 
 import classnames from "classnames";
@@ -25,10 +25,10 @@ const {
 	SelectControl,
 } = wp.components;
 
-const ALLOWED_BLOCKS = [ 'gk-blocks/news' ];
+const ALLOWED_BLOCKS = [ 'news-blocks/news' ];
 
 registerBlockType(
-	'gk-blocks/section',
+	'news-blocks/section',
 	{
 		title: __( 'Section' ),
 		icon: 'editor-table',

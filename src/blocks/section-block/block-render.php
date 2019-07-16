@@ -3,19 +3,19 @@
  * Section block render
  *
  * @since   0.1.0
- * @package Gk_Blocks
+ * @package News_Blocks
  */
 
 /**
  * Register block type
  */
-function gk_section_block() {
+function news_section_block() {
 	register_block_type(
-		'gk-blocks/section',
+		'news-blocks/section',
 		[
-			'editor_script' => 'gk-blocks',
+			'editor_script' => 'news-blocks',
 		]
 	);
 }
 
-add_action( 'init', 'gk_section_block' );
+add_action( 'init', 'news_section_block' );

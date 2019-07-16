@@ -413,7 +413,7 @@
 .news-block > .row + .row {
   margin-top: 1.875rem; }
 
-.wp-block-gk-blocks-news + .wp-block-gk-blocks-news {
+.wp-block-news-blocks-news + .wp-block-news-blocks-news {
   margin-top: 1.875rem; }
 
 .is-style-post-list .news-title {
@@ -476,7 +476,7 @@
   vertical-align: top;
   margin: 1.25rem 0; }
 
-.block-slider .blocks-section-inner .wp-block-gk-blocks-news + .wp-block-gk-blocks-news {
+.block-slider .blocks-section-inner .wp-block-news-blocks-news + .wp-block-news-blocks-news {
   margin: 0; }
 
 .block-slider .blocks-section-inner > div[class*="wp-block"] {

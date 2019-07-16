@@ -4,7 +4,7 @@
  * Custom block to show default latest news block.
  *
  * @since   0.1.0
- * @package Gk_Blocks
+ * @package News_Blocks
  */
 
 const { __ }                = wp.i18n;
@@ -40,7 +40,7 @@ const dateFormat = ( date ) => {
 };
 
 registerBlockType(
-	'gk-blocks/latest-posts',
+	'news-blocks/latest-posts',
 	{
 		title:    __( 'Latest Posts' ),
 		icon:     'megaphone',
@@ -74,7 +74,7 @@ registerBlockType(
 				}
 
 				return [
-					<div className={ classnames( 'gk-latest-posts', className ) }>
+					<div className={ classnames( 'news-latest-posts', className ) }>
 						{
 							posts ? posts.map( ( post ) => {
 								return [
